@@ -1,0 +1,85 @@
+{
+  "_instructions": {
+    "format": "每个截图一条记录。screenshot 是 screenshots/ 下的文件名。",
+    "player.position": "玩家在网格上的位置（0=最左）",
+    "player.facing": "玩家朝向: left 或 right",
+    "player.hp_pct": "玩家HP百分比，看绿色占血条的比例: 100=满血, 50=一半, 0=空血",
+    "enemies": "敌人列表，按从左到右排列。position=网格位置, hp_pct=HP百分比",
+    "skills[0-5]": "技能栏从左到右6个槽位。status: ready=彩色可用 / cooldown=灰色等待 / empty=空槽",
+    "grid_size": "当前网格大小"
+  },
+  "tests": [
+    {
+      "screenshot": "屏幕截图 2026-07-30 005652.png",
+      "ground_truth": {
+        "grid_size": 5,
+        "player": {
+          "position": 2,
+          "facing": "left",
+          "hp_pct": 100,
+          "shield": false
+        },
+        "enemies": [
+          {"position": 1, "hp_pct": 100}
+        ],
+        "skills": [
+          {"status": "ready"},
+          {"status": "ready"},
+          {"status": "empty"},
+          {"status": "empty"},
+          {"status": "empty"},
+          {"status": "empty"}
+        ]
+      }
+    },
+    {
+      "screenshot": "屏幕截图 2026-07-30 111925.png",
+      "ground_truth": {
+        "grid_size": 6,
+        "player": {
+          "position": 2,
+          "facing": "right",
+          "hp_pct": 100,
+          "shield": false
+        },
+        "enemies": [
+          {"position": 1, "hp_pct": 100},
+          {"position": 5, "hp_pct": 100}
+        ],
+        "skills": [
+          {"status": "cooldown"},
+          {"status": "cooldown"},
+          {"status": "empty"},
+          {"status": "empty"},
+          {"status": "empty"},
+          {"status": "empty"}
+        ]
+      }
+    },
+    {
+      "screenshot": "屏幕截图 2026-07-30 123351.png",
+      "ground_truth": {
+        "grid_size": 6,
+        "player": {
+          "position": 3,
+          "facing": "right",
+          "hp_pct": 100,
+          "shield": false
+        },
+        "enemies": [
+          {"position": 1, "hp_pct": 100},
+          {"position": 4, "hp_pct": 100},
+          {"position": 5, "hp_pct": 100}
+        ],
+        "skills": [
+          {"status": "cooldown"},
+          {"status": "cooldown"},
+          {"status": "empty"},
+          {"status": "empty"},
+          {"status": "empty"},
+          {"status": "empty"}
+        ]
+      }
+    }
+  ]
+}

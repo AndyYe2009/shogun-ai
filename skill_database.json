@@ -1,0 +1,579 @@
+{
+  "_description": "Shogun Showdown 卡牌数据库 — 基于游戏内技能图鉴（用户提供）",
+  "_source": "技能图鉴.xlsx - 2026-07-29",
+  "_total": 42,
+
+  "characters": {
+    "Wanderer": {
+      "name_zh": "流浪者",
+      "special": "向敌人方向移动时，可与前方敌人交换位置",
+      "default_tiles": ["旋风斩", "箭矢"],
+      "alternate_tiles": ["闪电", "地刺"]
+    }
+  },
+
+  "tiles": {
+    "武士刀": {
+      "name": "Katana",
+      "name_zh": "武士刀",
+      "damage": 2,
+      "range_min": 1, "range_max": 1,
+      "cooldown_max": 0,
+      "aoe": false,
+      "effects": [],
+      "target": "前方1格",
+      "description": "攻击身前的地格"
+    },
+    "Katana": { "_ref": "武士刀" },
+
+    "金碎棒": {
+      "name": "Tetsubo",
+      "name_zh": "金碎棒",
+      "damage": 4,
+      "range_min": 1, "range_max": 1,
+      "cooldown_max": 7,
+      "aoe": false,
+      "effects": [],
+      "target": "前方1格",
+      "description": "攻击身前的地格"
+    },
+    "Tetsubo": { "_ref": "金碎棒" },
+
+    "铁尺": {
+      "name": "Sai",
+      "name_zh": "铁尺",
+      "damage": 2,
+      "range_min": 1, "range_max": 1,
+      "cooldown_max": 5,
+      "aoe": false,
+      "effects": ["counter_double"],
+      "target": "前方1格",
+      "description": "攻击身前的地格。若敌人此回合要发动攻击，则造成双倍伤害"
+    },
+    "Sai": { "_ref": "铁尺" },
+
+    "耐心之刃": {
+      "name": "Blade of Patience",
+      "name_zh": "耐心之刃",
+      "damage": 0,
+      "range_min": 1, "range_max": 1,
+      "cooldown_max": 6,
+      "aoe": false,
+      "effects": ["growing"],
+      "target": "前方1格",
+      "description": "攻击身前的地格。该行动块每停留在攻击队列中一回合，攻击伤害就增加一点"
+    },
+    "Blade of Patience": { "_ref": "耐心之刃" },
+
+    "钩刃": {
+      "name": "Hookblade",
+      "name_zh": "钩刃",
+      "damage": 2,
+      "range_min": 1, "range_max": 1,
+      "cooldown_max": 5,
+      "aoe": false,
+      "effects": ["chain_on_kill"],
+      "target": "前方1格",
+      "description": "攻击身前的地格。打出致命一击时，向前移动一格，然后再次发出攻击，不过伤害减少一点"
+    },
+    "Hookblade": { "_ref": "钩刃" },
+
+    "升龙拳": {
+      "name": "Dragon Punch",
+      "name_zh": "升龙拳",
+      "damage": 1,
+      "range_min": 1, "range_max": 1,
+      "cooldown_max": 4,
+      "aoe": false,
+      "effects": ["push_far", "collision"],
+      "target": "前方1格→推至最远",
+      "description": "攻击身前的地格，并将目标推至最远端。若路径上有其他目标，则对其造成碰撞伤害"
+    },
+    "Dragon Punch": { "_ref": "升龙拳" },
+
+    "棍棒": {
+      "name": "Bo",
+      "name_zh": "棍棒",
+      "damage": 1,
+      "range_min": 1, "range_max": 1,
+      "cooldown_max": 5,
+      "aoe": false,
+      "effects": ["flip_target"],
+      "target": "前方1格",
+      "description": "攻击身前的地格，令目标转身"
+    },
+    "Bo": { "_ref": "棍棒" },
+
+    "背击": {
+      "name": "Back Strike",
+      "name_zh": "背击",
+      "damage": 3,
+      "range_min": 1, "range_max": 1,
+      "cooldown_max": 3,
+      "aoe": false,
+      "effects": [],
+      "target": "后方1格",
+      "description": "攻击身后的地格"
+    },
+    "Back Strike": { "_ref": "背击" },
+
+    "旋风斩": {
+      "name": "Swirl",
+      "name_zh": "旋风斩",
+      "damage": 2,
+      "range_min": 1, "range_max": 1,
+      "cooldown_max": 3,
+      "aoe": true,
+      "effects": [],
+      "target": "前方+后方各1格",
+      "description": "攻击身前及身后的地格。（Wanderer初始卡牌）"
+    },
+    "Swirl": { "_ref": "旋风斩" },
+
+    "阴阳铁扇": {
+      "name": "Twin Tessen",
+      "name_zh": "阴阳铁扇",
+      "damage": 1,
+      "range_min": 1, "range_max": 1,
+      "cooldown_max": 6,
+      "aoe": false,
+      "effects": ["push_far", "collision"],
+      "target": "前方+后方各1格→推至最远",
+      "description": "攻击身前及身后的地格，并将目标推至最远端。若路径上有其他目标，则对其造成碰撞伤害"
+    },
+    "Twin Tessen": { "_ref": "阴阳铁扇" },
+
+    "长枪": {
+      "name": "Spear",
+      "name_zh": "长枪",
+      "damage": 2,
+      "range_min": 1, "range_max": 2,
+      "cooldown_max": 5,
+      "aoe": false,
+      "effects": ["piercing"],
+      "target": "前方2格",
+      "description": "攻击身前的2个地格。可穿透敌人造成伤害"
+    },
+    "Spear": { "_ref": "长枪" },
+
+    "暗影镰刀": {
+      "name": "Shadow Kama",
+      "name_zh": "暗影镰刀",
+      "damage": 3,
+      "range_min": 2, "range_max": 2,
+      "cooldown_max": 3,
+      "aoe": false,
+      "effects": [],
+      "target": "前方第2格（跳过相邻格）",
+      "description": "攻击前方2格距离的地格"
+    },
+    "Shadow Kama": { "_ref": "暗影镰刀" },
+
+    "木薙刀": {
+      "name": "Nagiboku",
+      "name_zh": "木薙刀",
+      "damage": 2,
+      "range_min": 1, "range_max": 2,
+      "cooldown_max": 5,
+      "aoe": false,
+      "effects": ["piercing", "cannot_kill"],
+      "target": "前方2格+后方2格",
+      "description": "攻击前方的两个地格和后方的两个地格。可穿透敌人造成伤害。无法杀死目标，但能令其生命值最低降低到1点"
+    },
+    "Nagiboku": { "_ref": "木薙刀" },
+
+    "地刺": {
+      "name": "Earth Impale",
+      "name_zh": "地刺",
+      "damage": 2,
+      "range_min": 2, "range_max": 2,
+      "cooldown_max": 4,
+      "aoe": false,
+      "effects": [],
+      "target": "前方+后方第2格",
+      "description": "攻击前方和后方2格距离的地格"
+    },
+    "Earth Impale": { "_ref": "地刺" },
+
+    "流星锤": {
+      "name": "Meteor Hammer",
+      "name_zh": "流星锤",
+      "damage": 2,
+      "range_min": 1, "range_max": 3,
+      "cooldown_max": 5,
+      "aoe": false,
+      "effects": ["bounce_back"],
+      "target": "前方3格内最近敌人→弹回身后",
+      "description": "攻击前方3个地块内的第一个目标。若成功击中目标，则弹回击中招式使用者身后的地格"
+    },
+    "Meteor Hammer": { "_ref": "流星锤" },
+
+    "炽热彗星": {
+      "name": "Blazing Suisei",
+      "name_zh": "炽热彗星",
+      "damage": 2,
+      "range_min": 1, "range_max": 3,
+      "cooldown_max": 4,
+      "aoe": true,
+      "effects": ["explosion_on_kill"],
+      "target": "前方3格内最近敌人",
+      "description": "攻击前方3个地块内的第一个目标。打出致命一击时释放爆炸，对相邻地格上的单位造成两点伤害"
+    },
+    "Blazing Suisei": { "_ref": "炽热彗星" },
+
+    "手里剑": {
+      "name": "Shuriken",
+      "name_zh": "手里剑",
+      "damage": 1,
+      "range_min": 1, "range_max": 99,
+      "cooldown_max": 3,
+      "aoe": false,
+      "effects": [],
+      "target": "前方最近敌人（任意距离）",
+      "description": "攻击前方的第一个目标"
+    },
+    "Shuriken": { "_ref": "手里剑" },
+
+    "箭矢": {
+      "name": "Arrow",
+      "name_zh": "箭矢",
+      "damage": 2,
+      "range_min": 1, "range_max": 99,
+      "cooldown_max": 5,
+      "aoe": false,
+      "effects": [],
+      "target": "前方最近敌人（任意距离）",
+      "description": "攻击前方的第一个目标。（Wanderer初始卡牌）"
+    },
+    "Arrow": { "_ref": "箭矢" },
+
+    "苦无": {
+      "name": "Kunai",
+      "name_zh": "苦无",
+      "damage": 2,
+      "range_min": 1, "range_max": 99,
+      "cooldown_max": 7,
+      "aoe": false,
+      "effects": ["multi_hit"],
+      "target": "前方最近敌人",
+      "description": "掷出和攻击伤害数量相等的苦无。每把苦无造成1点伤害，攻击前方的第一个目标"
+    },
+    "Kunai": { "_ref": "苦无" },
+
+    "一文钱": {
+      "name": "Mon",
+      "name_zh": "一文钱",
+      "damage": 5,
+      "range_min": 1, "range_max": 99,
+      "cooldown_max": 7,
+      "aoe": false,
+      "effects": ["costs_coin"],
+      "target": "前方最近敌人",
+      "description": "攻击前方的第一个目标。花费1枚金币"
+    },
+    "Mon": { "_ref": "一文钱" },
+
+    "十字弓": {
+      "name": "Crossbow",
+      "name_zh": "十字弓",
+      "damage": 3,
+      "range_min": 1, "range_max": 99,
+      "cooldown_max": 5,
+      "aoe": false,
+      "effects": ["piercing", "needs_reload"],
+      "target": "前方最近2个敌人",
+      "description": "发射穿透弓箭，攻击前方的头两个目标。使用后攻击值降为零，需要放在攻击队列中空发一次，方可恢复攻击力"
+    },
+    "Crossbow": { "_ref": "十字弓" },
+
+    "抓钩": {
+      "name": "Grappling Hook",
+      "name_zh": "抓钩",
+      "damage": 1,
+      "range_min": 1, "range_max": 99,
+      "cooldown_max": 4,
+      "aoe": false,
+      "effects": ["pull_to_front"],
+      "target": "前方最近敌人→拉至面前",
+      "description": "将前方第一个目标拉到身前地格"
+    },
+    "Grappling Hook": { "_ref": "抓钩" },
+
+    "气推功": {
+      "name": "Ki Push",
+      "name_zh": "气推功",
+      "damage": 0,
+      "range_min": 1, "range_max": 99,
+      "cooldown_max": 6,
+      "aoe": false,
+      "effects": ["push_far", "collision"],
+      "target": "前方最近敌人→推至最远",
+      "description": "攻击前方的第一个目标，并将目标推至最远端。若路径上有其他目标，则对其造成碰撞伤害"
+    },
+    "Ki Push": { "_ref": "气推功" },
+
+    "铁炮": {
+      "name": "Tanegashima",
+      "name_zh": "铁炮",
+      "damage": 4,
+      "range_min": 1, "range_max": 99,
+      "cooldown_max": 7,
+      "aoe": false,
+      "effects": ["recoil_both"],
+      "target": "前方最近敌人",
+      "description": "攻击前方的第一个目标。攻击者和目标都后退1个地格，有机会造成碰撞伤害"
+    },
+    "Tanegashima": { "_ref": "铁炮" },
+
+    "圆月轮": {
+      "name": "Chakram",
+      "name_zh": "圆月轮",
+      "damage": 0,
+      "range_min": 1, "range_max": 99,
+      "cooldown_max": 7,
+      "aoe": false,
+      "effects": ["scaling_on_kill"],
+      "target": "前方最近+后方最近",
+      "description": "攻击前方及后方的第一个目标。每有一个目标死亡，就增加1点伤害。使用后重置伤害"
+    },
+    "Chakram": { "_ref": "圆月轮" },
+
+    "闪电": {
+      "name": "Lightning",
+      "name_zh": "闪电",
+      "damage": 2,
+      "range_min": 1, "range_max": 99,
+      "cooldown_max": 5,
+      "aoe": false,
+      "effects": [],
+      "target": "前方最远敌人",
+      "description": "攻击前方距离最远的目标"
+    },
+    "Lightning": { "_ref": "闪电" },
+
+    "伤口撒盐": {
+      "name": "Scar Strike",
+      "name_zh": "伤口撒盐",
+      "damage": 1,
+      "range_min": 1, "range_max": 99,
+      "cooldown_max": 5,
+      "aoe": true,
+      "effects": [],
+      "target": "所有不满血敌人",
+      "description": "攻击所有生命值不满的目标"
+    },
+    "Scar Strike": { "_ref": "伤口撒盐" },
+
+    "陷阱": {
+      "name": "Trap",
+      "name_zh": "陷阱",
+      "damage": 3,
+      "range_min": 1, "range_max": 1,
+      "cooldown_max": 4,
+      "aoe": false,
+      "effects": ["place_trap"],
+      "target": "前方1格",
+      "description": "在身前地格放置陷阱。目标踏上该地格时，就会触发陷阱"
+    },
+    "Trap": { "_ref": "陷阱" },
+
+    "荆棘": {
+      "name": "Thorns",
+      "name_zh": "荆棘",
+      "damage": 1,
+      "range_min": 1, "range_max": 1,
+      "cooldown_max": 4,
+      "aoe": false,
+      "effects": ["place_barrier"],
+      "target": "前方1格",
+      "description": "在身前的地格放置生命值为1点的障碍物。障碍物相邻地格的敌人，只要攻击该障碍物，就会收到伤害"
+    },
+    "Thorns": { "_ref": "荆棘" },
+
+    "前冲": {
+      "name": "Charge",
+      "name_zh": "前冲",
+      "damage": 1,
+      "range_min": 1, "range_max": 99,
+      "cooldown_max": 4,
+      "aoe": false,
+      "effects": ["dash_attack_forward"],
+      "target": "前方第一个敌人",
+      "description": "向前冲刺，攻击前方的第一个目标"
+    },
+    "Charge": { "_ref": "前冲" },
+
+    "暗影前冲": {
+      "name": "Shadow Dash",
+      "name_zh": "暗影前冲",
+      "damage": 1,
+      "range_min": 1, "range_max": 99,
+      "cooldown_max": 5,
+      "aoe": false,
+      "effects": ["dash_through_forward"],
+      "target": "前方敌人→穿过",
+      "description": "向前冲刺并穿过目标，停在目标后方的第一个空地格上。若无空地格，则此招无效"
+    },
+    "Shadow Dash": { "_ref": "暗影前冲" },
+
+    "烟雾弹": {
+      "name": "Smoke Bomb",
+      "name_zh": "烟雾弹",
+      "damage": 1,
+      "range_min": 1, "range_max": 99,
+      "cooldown_max": 5,
+      "aoe": false,
+      "effects": ["swap_with_target"],
+      "target": "前方最近敌人",
+      "description": "和前方第一个目标交换位置"
+    },
+    "Smoke Bomb": { "_ref": "烟雾弹" },
+
+    "后冲": {
+      "name": "Back Charge",
+      "name_zh": "后冲",
+      "damage": 1,
+      "range_min": 1, "range_max": 99,
+      "cooldown_max": 3,
+      "aoe": false,
+      "effects": ["dash_attack_backward"],
+      "target": "后方第一个敌人",
+      "description": "向后冲刺，攻击后方的第一个目标"
+    },
+    "Back Charge": { "_ref": "后冲" },
+
+    "暗影后冲": {
+      "name": "Back Shadow Dash",
+      "name_zh": "暗影后冲",
+      "damage": 1,
+      "range_min": 1, "range_max": 99,
+      "cooldown_max": 5,
+      "aoe": false,
+      "effects": ["dash_through_backward"],
+      "target": "后方敌人→穿过",
+      "description": "向后冲刺并穿过目标，停在目标后方的第一个空地格上。若无空地格，则此招无效"
+    },
+    "Back Shadow Dash": { "_ref": "暗影后冲" },
+
+    "后撤烟雾弹": {
+      "name": "Back Smoke Bomb",
+      "name_zh": "后撤烟雾弹",
+      "damage": 1,
+      "range_min": 1, "range_max": 99,
+      "cooldown_max": 5,
+      "aoe": false,
+      "effects": ["swap_with_target_behind"],
+      "target": "后方最近敌人",
+      "description": "和后方的第一个目标交换位置"
+    },
+    "Back Smoke Bomb": { "_ref": "后撤烟雾弹" },
+
+    "诅咒": {
+      "name": "Curse",
+      "name_zh": "诅咒",
+      "damage": 0,
+      "range_min": 1, "range_max": 99,
+      "cooldown_max": 7,
+      "aoe": false,
+      "effects": ["curse_double_damage", "free_play"],
+      "target": "任意敌人",
+      "description": "受诅咒的目标下次被击中时，会收到双倍伤害。随心所欲：将行动块添加到攻击队列，也不会推进回合"
+    },
+    "Curse": { "_ref": "诅咒" },
+
+    "急转身": {
+      "name": "Sharp Turn",
+      "name_zh": "急转身",
+      "damage": 1,
+      "range_min": 1, "range_max": 1,
+      "cooldown_max": 7,
+      "aoe": true,
+      "effects": ["turn_around", "free_play"],
+      "target": "周围所有格",
+      "description": "转身，攻击周围地格。随心所欲：将行动块添加到攻击队列，也不会推进回合"
+    },
+    "Sharp Turn": { "_ref": "急转身" },
+
+    "招牌动作": {
+      "name": "Signature Move",
+      "name_zh": "招牌动作",
+      "damage": 0,
+      "range_min": 0, "range_max": 0,
+      "cooldown_max": 5,
+      "aoe": false,
+      "effects": ["hero_special", "free_play"],
+      "target": "取决于角色",
+      "description": "发动该英雄的特殊技能。随心所欲：将行动块添加到攻击队列，也不会推进回合"
+    },
+    "Signature Move": { "_ref": "招牌动作" },
+
+    "交叉换位": {
+      "name": "Swap Toss",
+      "name_zh": "交叉换位",
+      "damage": 0,
+      "range_min": 0, "range_max": 0,
+      "cooldown_max": 7,
+      "aoe": false,
+      "effects": ["swap_front_back", "free_play"],
+      "target": "前方+后方",
+      "description": "让身前及身后地格上的单位交换位置。随心所欲：将行动块添加到攻击队列，也不会推进回合"
+    },
+    "Swap Toss": { "_ref": "交叉换位" },
+
+    "冲刺": {
+      "name": "Dash",
+      "name_zh": "冲刺",
+      "damage": 0,
+      "range_min": 0, "range_max": 0,
+      "cooldown_max": 6,
+      "aoe": false,
+      "effects": ["dash_to_farthest", "free_play"],
+      "target": "最远空位",
+      "description": "向前冲刺到最远端。随心所欲：将行动块添加到攻击队列，也不会推进回合"
+    },
+    "Dash": { "_ref": "冲刺" },
+
+    "原点对称": {
+      "name": "Origin of Symmetry",
+      "name_zh": "原点对称",
+      "damage": 0,
+      "range_min": 0, "range_max": 0,
+      "cooldown_max": 6,
+      "aoe": false,
+      "effects": ["teleport_center", "free_play"],
+      "target": "中央格子",
+      "description": "瞬移至场中央，若该地格上有目标，则与之交换位置。随心所欲：将行动块添加到攻击队列，也不会推进回合"
+    },
+    "Origin of Symmetry": { "_ref": "原点对称" },
+
+    "镜像": {
+      "name": "Mirror",
+      "name_zh": "镜像",
+      "damage": 0,
+      "range_min": 0, "range_max": 0,
+      "cooldown_max": 6,
+      "aoe": false,
+      "effects": ["mirror_position", "free_play"],
+      "target": "对称位置",
+      "description": "镜像反转招式使用者场上的位置。随心所欲：将行动块添加到攻击队列，也不会推进回合"
+    },
+    "Mirror": { "_ref": "镜像" }
+  },
+
+  "passive_skills": {
+    "_note": "被动技能（跑图时获取），与底部卡牌栏的 Attack Tiles 不同",
+    "Combo Coin": {"name_zh": "连击金币", "effect": "连击击杀时获得额外金币"},
+    "Mindfulness": {"name_zh": "正念", "effect": "减少技能冷却时间"},
+    "Reactive Shield": {"name_zh": "反应护盾", "effect": "受到攻击时自动获得护盾"},
+    "Chilling Blood": {"name_zh": "寒血", "effect": "冰冻相关增益"},
+    "Healthy": {"name_zh": "健康", "effect": "+2 最大HP"},
+    "Big Pockets": {"name_zh": "大口袋", "effect": "额外道具容量"},
+    "Rogue Retail": {"name_zh": "黑市商道", "effect": "商店折扣"},
+    "Two-Faced Dancer": {"name_zh": "双面舞者", "effect": "转身变为免费行动"},
+    "Chilling Combo": {"name_zh": "寒冰连击", "effect": "冰冻+连击协同"},
+    "Odd Curse": {"name_zh": "奇异诅咒", "effect": "诅咒相关效果"},
+    "Seiryu's Scale": {"name_zh": "青龙鳞", "effect": ""},
+    "Fenghuang's Feather": {"name_zh": "凤凰羽毛", "effect": ""},
+    "Overflow Guard": {"name_zh": "溢出防护", "effect": ""}
+  }
+}
